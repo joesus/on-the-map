@@ -20,8 +20,27 @@ class OnTheMapViewController: UIViewController {
         // TODO - Get some Logout Going
         var logoutButton: UIBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logoutUser")
         self.navigationItem.backBarButtonItem = logoutButton
-//        self.navigationController?.navigationItem.leftBarButtonItem = logoutButton
-        // Do any additional setup after loading the view.
+        
+        getStudentInformationArray()
+    }
+
+    func getStudentInformationArray() {
+        ParseAPIClient.sharedInstance().getStudentLocations() { (success, errorString, studentArray) in
+            if success {
+                println("Successfully got students")
+            } else {
+                self.displayError(errorString)
+            }
+        }
+
+    }
+    
+    func displayError(errorString: String?) {
+        dispatch_async(dispatch_get_main_queue(), {
+            if let errorString = errorString {
+                println(errorString)
+            }
+        })
     }
 
     @IBAction func logoutUser(sender: UIBarButtonItem) {

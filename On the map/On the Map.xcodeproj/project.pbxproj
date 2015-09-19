@@ -19,6 +19,8 @@
 		F4B7416F1BA100BF0042AEFD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B7416D1BA100BF0042AEFD /* FBSDKCoreKit.framework */; };
 		F4B741701BA100BF0042AEFD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B7416E1BA100BF0042AEFD /* FBSDKLoginKit.framework */; };
 		F4B741731BA1036F0042AEFD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B741721BA1036F0042AEFD /* Bolts.framework */; };
+		F4CC29F61BAE19200077AD95 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC29F51BAE19200077AD95 /* ParseAPIClient.swift */; };
+		F4CC29F81BAE1B6A0077AD95 /* StudentInformationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC29F71BAE1B6A0077AD95 /* StudentInformationStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		F4B7416E1BA100BF0042AEFD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4B741711BA1022E0042AEFD /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
 		F4B741721BA1036F0042AEFD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F4CC29F51BAE19200077AD95 /* ParseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPIClient.swift; sourceTree = "<group>"; };
+		F4CC29F71BAE1B6A0077AD95 /* StudentInformationStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformationStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				F482B95D1B9CE856006E20DD /* Supporting Files */,
 				F4B741681B9DF0220042AEFD /* LoginClient.swift */,
 				F4B7416A1B9DFDBA0042AEFD /* WebSignupViewController.swift */,
+				F4CC29F51BAE19200077AD95 /* ParseAPIClient.swift */,
+				F4CC29F71BAE1B6A0077AD95 /* StudentInformationStruct.swift */,
 			);
 			path = "On the Map";
 			sourceTree = "<group>";
@@ -244,10 +250,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B7416B1B9DFDBA0042AEFD /* WebSignupViewController.swift in Sources */,
+				F4CC29F81BAE1B6A0077AD95 /* StudentInformationStruct.swift in Sources */,
 				F4B741691B9DF0220042AEFD /* LoginClient.swift in Sources */,
 				F4B741671B9DEE6A0042AEFD /* OnTheMapViewController.swift in Sources */,
 				F482B9621B9CE856006E20DD /* LoginViewController.swift in Sources */,
 				F482B9601B9CE856006E20DD /* AppDelegate.swift in Sources */,
+				F4CC29F61BAE19200077AD95 /* ParseAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
