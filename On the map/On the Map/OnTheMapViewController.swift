@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class OnTheMapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,8 +30,10 @@ class OnTheMapViewController: UIViewController {
         loginManager.logOut()
         
         // Logout if login was through udacity api
-        
-        
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }

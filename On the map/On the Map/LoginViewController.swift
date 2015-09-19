@@ -55,7 +55,10 @@ class LoginViewController: UITableViewController, UIWebViewDelegate, FBSDKLoginB
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            self.completeLogin()
+        }
         self.addKeyboardDismissRecognizer()
         
     }
