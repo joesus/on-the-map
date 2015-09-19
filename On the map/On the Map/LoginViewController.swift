@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UIWebViewDelegate {
+class LoginViewController: UITableViewController, UIWebViewDelegate, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
@@ -16,7 +16,8 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
-    
+    let loginView : FBSDKLoginButton = FBSDKLoginButton()
+
     var backgroundGradient: CAGradientLayer? = nil
     var tapRecognizer: UITapGestureRecognizer? = nil
     
@@ -24,17 +25,49 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         self.configureUI()
+        self.configureFacebook()
+    }
+    
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        println("User Logged In")
+        
+        if ((error) != nil)
+        {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if result.grantedPermissions.contains("email")
+            {
+                self.completeLogin()
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        println("User Logged Out")
     }
 
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+        super.viewWillAppear(true)
+        
         self.addKeyboardDismissRecognizer()
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
         self.removeKeyboardDismissRecognizer()
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.configureUI()  
+    }
+        
     // MARK: - Keyboard Fixes
     
     func addKeyboardDismissRecognizer() {
@@ -70,10 +103,14 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
-    
-    
+    @IBAction func signInWithFacebook(sender: UIButton) {
+        self.loginView.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+    }
+
     func completeLogin() {
         dispatch_async(dispatch_get_main_queue(), {
+            self.usernameField.text = ""
+            self.passwordField.text = ""
             self.performSegueWithIdentifier("showTabBarController", sender: self)
         })
     }
@@ -130,5 +167,20 @@ extension LoginViewController {
         tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
         tapRecognizer?.numberOfTapsRequired = 1
         
+    }
+    
+    func configureFacebook() {
+        FBSDKSettings.setAppID("365362206864879")
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            self.completeLogin()
+        }
+        else
+        {
+            self.view.addSubview(loginView)
+            self.loginView.frame.origin.x = -3000
+            self.loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            self.loginView.delegate = self
+        }
     }
 }

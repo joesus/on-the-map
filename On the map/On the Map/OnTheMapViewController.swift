@@ -12,13 +12,23 @@ class OnTheMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        // TODO - Get some Logout Going
+        var logoutButton: UIBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logoutUser")
+        self.navigationItem.backBarButtonItem = logoutButton
+//        self.navigationController?.navigationItem.leftBarButtonItem = logoutButton
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func logoutUser(sender: UIBarButtonItem) {
+        // Logout if login was done with facebook
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        
+        // Logout if login was through udacity api
+        
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
 }
