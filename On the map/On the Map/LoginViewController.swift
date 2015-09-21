@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UIWebViewDelegate, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
@@ -25,6 +25,8 @@ class LoginViewController: UIViewController, UIWebViewDelegate, FBSDKLoginButton
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameField.delegate = self
+        passwordField.delegate = self
         
         self.configureUI()
         self.configureFacebook()
@@ -83,6 +85,17 @@ class LoginViewController: UIViewController, UIWebViewDelegate, FBSDKLoginButton
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
+    }
+    
+    // MARK: - TextField Delegate Methods
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.usernameField {
+            passwordField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            touchLogin(self.loginButton)
+        }
+        return true
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {

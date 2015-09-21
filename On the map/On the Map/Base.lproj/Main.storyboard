@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Wwi-wq-0e9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kD-1I-fKU">
                                 <rect key="frame" x="8" y="380" width="584" height="50"/>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Mth-ms-wb3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CB-JU-O86">
                                 <rect key="frame" x="171" y="452" width="185" height="24"/>
@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="1218" y="918"/>
         </scene>
-        <!--View Controller-->
+        <!--List-->
         <scene sceneID="iCB-lk-a6S">
             <objects>
                 <viewController id="4xm-wF-wz6" sceneMemberID="viewController">
@@ -191,13 +191,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="List" id="Eir-aa-iKc"/>
+                    <tabBarItem key="tabBarItem" title="List" image="List" id="Eir-aa-iKc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsN-Z3-4iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823" y="569"/>
         </scene>
-        <!--On The Map View Controller-->
+        <!--Map-->
         <scene sceneID="nhp-Qq-KWt">
             <objects>
                 <viewController id="lzr-rh-3uK" customClass="OnTheMapViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,7 +239,7 @@
                             <constraint firstItem="5sG-1I-FWb" firstAttribute="trailing" secondItem="L9l-Ez-SYi" secondAttribute="trailing" id="rf5-ZB-0KD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Map" id="BXV-rU-tw2"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="BXV-rU-tw2"/>
                     <connections>
                         <outlet property="mapView" destination="5sG-1I-FWb" id="gAP-cT-iHV"/>
                     </connections>
