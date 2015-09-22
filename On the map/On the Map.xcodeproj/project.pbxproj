@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27C3EBE11BB1AFFC001E9B0D /* OnTheMapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */; };
 		F482B9601B9CE856006E20DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482B95F1B9CE856006E20DD /* AppDelegate.swift */; };
 		F482B9621B9CE856006E20DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482B9611B9CE856006E20DD /* LoginViewController.swift */; };
 		F482B9651B9CE856006E20DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F482B9631B9CE856006E20DD /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnTheMapListViewController.swift; path = ../OnTheMapListViewController.swift; sourceTree = "<group>"; };
 		F482B95A1B9CE856006E20DD /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F482B95E1B9CE856006E20DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F482B95F1B9CE856006E20DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				F482B9611B9CE856006E20DD /* LoginViewController.swift */,
 				F482B9631B9CE856006E20DD /* Main.storyboard */,
 				F4B741661B9DEE6A0042AEFD /* OnTheMapViewController.swift */,
+				27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */,
 				F482B9661B9CE856006E20DD /* Images.xcassets */,
 				F482B9681B9CE856006E20DD /* LaunchScreen.xib */,
 				F482B95D1B9CE856006E20DD /* Supporting Files */,
@@ -253,6 +256,7 @@
 				F4CC29F81BAE1B6A0077AD95 /* StudentInformationStruct.swift in Sources */,
 				F4B741691B9DF0220042AEFD /* LoginClient.swift in Sources */,
 				F4B741671B9DEE6A0042AEFD /* OnTheMapViewController.swift in Sources */,
+				27C3EBE11BB1AFFC001E9B0D /* OnTheMapListViewController.swift in Sources */,
 				F482B9621B9CE856006E20DD /* LoginViewController.swift in Sources */,
 				F482B9601B9CE856006E20DD /* AppDelegate.swift in Sources */,
 				F4CC29F61BAE19200077AD95 /* ParseAPIClient.swift in Sources */,
