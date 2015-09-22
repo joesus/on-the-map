@@ -34,6 +34,11 @@ class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
         self.subscribeToKeyboardNotifications()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if isLoggedIn() { self.completeLogin() }
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -223,18 +228,15 @@ extension LoginViewController {
         
     }
     
-    func configureFacebook() {
+    func isLoggedIn() -> Bool {
         FBSDKSettings.setAppID("365362206864879")
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            self.completeLogin()
-        }
-        else
-        {
-            self.view.addSubview(loginView)
-            self.loginView.frame.origin.x = -3000
-            self.loginView.readPermissions = ["public_profile", "email", "user_friends"]
-            self.loginView.delegate = self
-        }
+        return FBSDKAccessToken.currentAccessToken() != nil
+    }
+    
+    func configureFacebook() {
+        self.view.addSubview(loginView)
+        self.loginView.frame.origin.x = -3000
+        self.loginView.readPermissions = ["public_profile", "email", "user_friends"]
+        self.loginView.delegate = self
     }
 }
