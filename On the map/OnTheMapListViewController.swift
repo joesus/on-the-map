@@ -60,18 +60,16 @@ class OnTheMapListViewController: UIViewController, UITableViewDelegate, UITable
         
         if let studentArray = students {
             var student = studentArray[indexPath.row]
-            var infoButton = UIButton.buttonWithType(UIButtonType.InfoLight) as! UIButton
-            infoButton.frame = CGRectMake(3,8,30, 30);
-            cell.accessoryType = UITableViewCellAccessoryType.DetailButton
+            cell.imageView?.image = UIImage(named: "Pin")
             cell.textLabel!.text = "\(student.firstName) \(student.lastName)"
             cell.detailTextLabel!.text = student.mapString
         }
         return cell
     }
     
-    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let app = UIApplication.sharedApplication()
-        
+
         if let studentArray = students {
             app.openURL(NSURL(string: studentArray[indexPath.row].mediaURL)!)
         }
