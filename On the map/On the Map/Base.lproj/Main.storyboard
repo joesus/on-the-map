@@ -171,7 +171,6 @@
         <!--List-->
         <scene sceneID="iCB-lk-a6S">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AsN-Z3-4iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4xm-wF-wz6" customClass="OnTheMapListViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YLi-fB-N4I"/>
@@ -188,6 +187,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="YKD-45-P05">
                                             <connections>
                                                 <action selector="logoutUser:" destination="4xm-wF-wz6" id="8X2-UL-UIC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="Pin" id="YQw-x8-wOA">
+                                            <connections>
+                                                <segue destination="yG2-Rh-b3D" kind="presentation" id="4Eh-ve-V5n"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -227,6 +231,7 @@
                         <outlet property="tableView" destination="6Q2-AS-N2k" id="sHu-xJ-tuz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AsN-Z3-4iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823" y="569"/>
         </scene>
@@ -249,6 +254,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="IQ5-lC-2TT">
                                             <connections>
                                                 <action selector="logoutUser:" destination="lzr-rh-3uK" id="1sn-3a-qp6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="Pin" id="Gtd-Cc-bXU">
+                                            <connections>
+                                                <segue destination="yG2-Rh-b3D" kind="presentation" id="eS9-dz-Inf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -281,6 +291,43 @@
             </objects>
             <point key="canvasLocation" x="2824" y="-93"/>
         </scene>
+        <!--Information Posting View Controller-->
+        <scene sceneID="qZg-Tu-it3">
+            <objects>
+                <viewController id="yG2-Rh-b3D" customClass="InformationPostingViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9Y-xV-5QU"/>
+                        <viewControllerLayoutGuide type="bottom" id="gzX-0n-wUf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3km-HB-pwD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1s-5c-IYM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="3ej-eI-EYL">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="3Sv-MM-a9w">
+                                            <connections>
+                                                <action selector="didPressCancel:" destination="yG2-Rh-b3D" id="AFe-mv-vZN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="h1s-5c-IYM" secondAttribute="trailing" id="PMk-5y-ORx"/>
+                            <constraint firstItem="h1s-5c-IYM" firstAttribute="leading" secondItem="3km-HB-pwD" secondAttribute="leading" id="Wg9-Rf-izE"/>
+                            <constraint firstItem="h1s-5c-IYM" firstAttribute="top" secondItem="3km-HB-pwD" secondAttribute="top" id="cG2-XR-t6a"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOA-Ei-KBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3518" y="220"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H3F-Rx-82F">
             <objects>
@@ -304,6 +351,10 @@
     <resources>
         <image name="List" width="32" height="32"/>
         <image name="Map" width="32" height="32"/>
+        <image name="Pin" width="32" height="32"/>
         <image name="Udacity" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eS9-dz-Inf"/>
+    </inferredMetricsTieBreakers>
 </document>
