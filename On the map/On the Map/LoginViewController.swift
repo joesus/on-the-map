@@ -34,11 +34,6 @@ class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
         self.subscribeToKeyboardNotifications()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if isLoggedIn() { self.completeLogin() }
-    }
-    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -134,7 +129,6 @@ class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
             self.completeLogin()
         }
         self.addKeyboardDismissRecognizer()
-        
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		279F03A71BB47F70004B6773 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279F03A61BB47F70004B6773 /* InformationPostingViewController.swift */; };
+		279F03AB1BB4A4D7004B6773 /* InformationPostingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279F03AA1BB4A4D7004B6773 /* InformationPostingTableViewController.swift */; };
 		27C3EBE11BB1AFFC001E9B0D /* OnTheMapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */; };
 		F482B9601B9CE856006E20DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482B95F1B9CE856006E20DD /* AppDelegate.swift */; };
 		F482B9621B9CE856006E20DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482B9611B9CE856006E20DD /* LoginViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		279F03A61BB47F70004B6773 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
+		279F03AA1BB4A4D7004B6773 /* InformationPostingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostingTableViewController.swift; sourceTree = "<group>"; };
 		27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnTheMapListViewController.swift; path = ../OnTheMapListViewController.swift; sourceTree = "<group>"; };
 		F482B95A1B9CE856006E20DD /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F482B95E1B9CE856006E20DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				F4CC29F51BAE19200077AD95 /* ParseAPIClient.swift */,
 				F4CC29F71BAE1B6A0077AD95 /* StudentInformationStruct.swift */,
 				279F03A61BB47F70004B6773 /* InformationPostingViewController.swift */,
+				279F03AA1BB4A4D7004B6773 /* InformationPostingTableViewController.swift */,
 			);
 			path = "On the Map";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				F4B7416B1B9DFDBA0042AEFD /* WebSignupViewController.swift in Sources */,
 				F4CC29F81BAE1B6A0077AD95 /* StudentInformationStruct.swift in Sources */,
 				F4B741691B9DF0220042AEFD /* LoginClient.swift in Sources */,
+				279F03AB1BB4A4D7004B6773 /* InformationPostingTableViewController.swift in Sources */,
 				F4B741671B9DEE6A0042AEFD /* OnTheMapViewController.swift in Sources */,
 				27C3EBE11BB1AFFC001E9B0D /* OnTheMapListViewController.swift in Sources */,
 				F482B9621B9CE856006E20DD /* LoginViewController.swift in Sources */,
