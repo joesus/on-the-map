@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272ED16A1BB5B8E50013B335 /* On_the_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272ED1691BB5B8E50013B335 /* On_the_MapUITests.swift */; };
 		279F03A71BB47F70004B6773 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279F03A61BB47F70004B6773 /* InformationPostingViewController.swift */; };
 		279F03AB1BB4A4D7004B6773 /* InformationPostingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279F03AA1BB4A4D7004B6773 /* InformationPostingTableViewController.swift */; };
 		27C3EBE11BB1AFFC001E9B0D /* OnTheMapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */; };
@@ -27,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		272ED16C1BB5B8E50013B335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F482B9521B9CE856006E20DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F482B9591B9CE856006E20DD;
+			remoteInfo = "On the Map";
+		};
 		F482B9701B9CE857006E20DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F482B9521B9CE856006E20DD /* Project object */;
@@ -37,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		272ED1671BB5B8E50013B335 /* On the MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the MapUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		272ED1691BB5B8E50013B335 /* On_the_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_the_MapUITests.swift; sourceTree = "<group>"; };
+		272ED16B1BB5B8E50013B335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		279F03A61BB47F70004B6773 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
 		279F03AA1BB4A4D7004B6773 /* InformationPostingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostingTableViewController.swift; sourceTree = "<group>"; };
 		27C3EBE01BB1AFFC001E9B0D /* OnTheMapListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnTheMapListViewController.swift; path = ../OnTheMapListViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		272ED1641BB5B8E50013B335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F482B9571B9CE856006E20DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,13 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		272ED1681BB5B8E50013B335 /* On the MapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				272ED1691BB5B8E50013B335 /* On_the_MapUITests.swift */,
+				272ED16B1BB5B8E50013B335 /* Info.plist */,
+			);
+			path = "On the MapUITests";
+			sourceTree = "<group>";
+		};
 		F482B9511B9CE856006E20DD = {
 			isa = PBXGroup;
 			children = (
 				F4B7416C1BA1008A0042AEFD /* Frameworks */,
 				F482B95C1B9CE856006E20DD /* On the Map */,
-				F482B9721B9CE857006E20DD /* On the MapTests */,
 				F482B95B1B9CE856006E20DD /* Products */,
+				272ED1681BB5B8E50013B335 /* On the MapUITests */,
+				F482B9721B9CE857006E20DD /* On the MapTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +125,7 @@
 			children = (
 				F482B95A1B9CE856006E20DD /* On the Map.app */,
 				F482B96F1B9CE857006E20DD /* On the MapTests.xctest */,
+				272ED1671BB5B8E50013B335 /* On the MapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +190,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		272ED1661BB5B8E50013B335 /* On the MapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 272ED16E1BB5B8E50013B335 /* Build configuration list for PBXNativeTarget "On the MapUITests" */;
+			buildPhases = (
+				272ED1631BB5B8E50013B335 /* Sources */,
+				272ED1641BB5B8E50013B335 /* Frameworks */,
+				272ED1651BB5B8E50013B335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				272ED16D1BB5B8E50013B335 /* PBXTargetDependency */,
+			);
+			name = "On the MapUITests";
+			productName = "On the MapUITests";
+			productReference = 272ED1671BB5B8E50013B335 /* On the MapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F482B9591B9CE856006E20DD /* On the Map */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F482B9791B9CE857006E20DD /* Build configuration list for PBXNativeTarget "On the Map" */;
@@ -202,9 +249,15 @@
 		F482B9521B9CE856006E20DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Joe;
 				TargetAttributes = {
+					272ED1661BB5B8E50013B335 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = F482B9591B9CE856006E20DD;
+					};
 					F482B9591B9CE856006E20DD = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -229,11 +282,19 @@
 			targets = (
 				F482B9591B9CE856006E20DD /* On the Map */,
 				F482B96E1B9CE857006E20DD /* On the MapTests */,
+				272ED1661BB5B8E50013B335 /* On the MapUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		272ED1651BB5B8E50013B335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F482B9581B9CE856006E20DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +315,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		272ED1631BB5B8E50013B335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				272ED16A1BB5B8E50013B335 /* On_the_MapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F482B9561B9CE856006E20DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +351,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		272ED16D1BB5B8E50013B335 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F482B9591B9CE856006E20DD /* On the Map */;
+			targetProxy = 272ED16C1BB5B8E50013B335 /* PBXContainerItemProxy */;
+		};
 		F482B9711B9CE857006E20DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F482B9591B9CE856006E20DD /* On the Map */;
@@ -309,6 +383,33 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		272ED16F1BB5B8E50013B335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "On the MapUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "joesus.On-the-MapUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "On the Map";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		272ED1701BB5B8E50013B335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "On the MapUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "joesus.On-the-MapUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "On the Map";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		F482B9771B9CE857006E20DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +431,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -400,6 +502,7 @@
 				);
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Susnick.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
@@ -415,6 +518,7 @@
 				);
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Susnick.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
@@ -434,6 +538,7 @@
 				);
 				INFOPLIST_FILE = "On the MapTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Susnick.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/On the Map.app/On the Map";
 			};
@@ -449,6 +554,7 @@
 				);
 				INFOPLIST_FILE = "On the MapTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Susnick.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/On the Map.app/On the Map";
 			};
@@ -457,6 +563,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		272ED16E1BB5B8E50013B335 /* Build configuration list for PBXNativeTarget "On the MapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				272ED16F1BB5B8E50013B335 /* Debug */,
+				272ED1701BB5B8E50013B335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F482B9551B9CE856006E20DD /* Build configuration list for PBXProject "On the Map" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

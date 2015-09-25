@@ -99,7 +99,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
+        print("User Logged In")
         
         if ((error) != nil)
         {
@@ -119,7 +119,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        print("User Logged Out")
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -171,7 +171,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
     func displayError(errorString: String?) {
         dispatch_async(dispatch_get_main_queue(), {
             if let errorString = errorString {
-                println(errorString)
+                print(errorString)
             }
         })
     }
@@ -190,7 +190,7 @@ extension LoginViewController {
         self.backgroundGradient!.colors = [colorTop, colorBottom]
         self.backgroundGradient!.locations = [0.0, 1.0]
         self.backgroundGradient!.frame = view.frame
-        self.view.layer.insertSublayer(self.backgroundGradient, atIndex: 0)
+        self.view.layer.insertSublayer(self.backgroundGradient!, atIndex: 0)
         
         /* Configure header text label */
         headerLabel.font = UIFont(name: "AvenirNext-Medium", size: 24.0)

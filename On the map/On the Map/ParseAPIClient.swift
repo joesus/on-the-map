@@ -50,8 +50,7 @@ class ParseAPIClient: NSObject {
                 }
             }
             
-            var parsingError: NSError? = nil
-            let parsedResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError) as! NSDictionary
+            let parsedResult = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
             
             if let studentsArray = parsedResult["results"] as? [[String:AnyObject]] {
                 // iterate through the dictionaries to create studentInformationArray

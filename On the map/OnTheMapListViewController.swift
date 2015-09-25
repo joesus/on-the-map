@@ -22,7 +22,7 @@ class OnTheMapListViewController: UIViewController, UITableViewDelegate, UITable
     func getStudentInformationArray() {
         ParseAPIClient.sharedInstance().getStudentLocations() { (success, errorString, studentArray) in
             if success {
-                println("Successfully got students")
+                print("Successfully got students")
                 dispatch_async(dispatch_get_main_queue()) {
                     self.students = studentArray
                     self.tableView.reloadData()
@@ -36,7 +36,7 @@ class OnTheMapListViewController: UIViewController, UITableViewDelegate, UITable
     func displayError(errorString: String?) {
         dispatch_async(dispatch_get_main_queue(), {
             if let errorString = errorString {
-                println(errorString)
+                print(errorString)
             }
         })
     }
@@ -48,7 +48,7 @@ class OnTheMapListViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let studentArray = students {
-            return count(studentArray)
+            return studentArray.count
         } else {
             return 1
         }
@@ -56,10 +56,10 @@ class OnTheMapListViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         
         if let studentArray = students {
-            var student = studentArray[indexPath.row]
+            let student = studentArray[indexPath.row]
             cell.imageView?.image = UIImage(named: "Pin")
             cell.textLabel!.text = "\(student.firstName) \(student.lastName)"
             cell.detailTextLabel!.text = student.mapString

@@ -37,7 +37,7 @@ class LoginClient: NSObject {
     func authenticateWithViewController(hostViewController: LoginViewController, completionHandler: (success: Bool, errorString: String?) -> ()) {
     
         // Discontinue if fields are missing
-        if hostViewController.usernameField.text.isEmpty != false || hostViewController.passwordField.text.isEmpty != false {
+        if hostViewController.usernameField.text!.isEmpty != false || hostViewController.passwordField.text!.isEmpty != false {
             dispatch_async(dispatch_get_main_queue()) {
                 let alert = UIAlertView(title: "Oops", message: "Please enter a user name and password", delegate: self, cancelButtonTitle: "Dismiss")
                 alert.show()
@@ -50,7 +50,7 @@ class LoginClient: NSObject {
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = "{\"udacity\": {\"username\": \"\(hostViewController.usernameField.text)\", \"password\": \"\(hostViewController.passwordField.text)\"}}".dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = "{\"udacity\": {\"username\": \"\(hostViewController.usernameField.text!)\", \"password\": \"\(hostViewController.passwordField.text!)\"}}".dataUsingEncoding(NSUTF8StringEncoding)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
         
@@ -63,9 +63,8 @@ class LoginClient: NSObject {
                 }
             }
         
-            var parsingError: NSError? = nil
-            let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5)) /* subset response data! */
-            let parsedResult = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &parsingError) as! NSDictionary
+            let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5)) /* subset response data! */
+            let parsedResult = (try! NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments)) as! NSDictionary
         
             if let responseError = parsedResult["error"] as? String {
                 dispatch_async(dispatch_get_main_queue()) {

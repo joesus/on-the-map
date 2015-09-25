@@ -36,7 +36,7 @@ class WebSignupViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(webView: UIWebView) {
         
-        if(signupWebView.request!.URL!.absoluteString! == "https://www.udacity.com/me#!/") {
+        if(signupWebView.request!.URL!.absoluteString == "https://www.udacity.com/me#!/") {
             
             let alert = UIAlertView(title: "Welcome", message: "Thanks for signing up. Go ahead and login!", delegate: self, cancelButtonTitle: nil)
             alert.show()
