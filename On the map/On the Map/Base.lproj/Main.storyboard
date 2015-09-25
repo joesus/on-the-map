@@ -373,6 +373,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="geocodeInput:" destination="yG2-Rh-b3D" eventType="touchUpInside" id="5tU-Mq-Xqb"/>
+                                            <action selector="submitStudentInformation:" destination="yG2-Rh-b3D" eventType="touchUpInside" id="XTv-VK-3jU"/>
                                         </connections>
                                     </button>
                                 </subviews>

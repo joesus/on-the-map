@@ -10,11 +10,11 @@ import UIKit
 import Foundation
 
 class ParseAPIClient: NSObject {
-
+    
     let PARSE_APPLICATION_ID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     let REST_API_Key = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
     let STUDENT_API_BASE_URL_STRING = "https://api.parse.com/1/classes/StudentLocation"
-
+    
     var session: NSURLSession
     
     override init() {
@@ -32,13 +32,13 @@ class ParseAPIClient: NSObject {
         
         return Singleton.sharedInstance
     }
-
+    
     func getStudentLocations(completionHandler: (success: Bool, errorString: String?, studentArray: [StudentInformationStruct]?) -> ()) {
         var studentInformationArray: [StudentInformationStruct] = []
         let request = NSMutableURLRequest(URL: NSURL(string: STUDENT_API_BASE_URL_STRING + "?limit=100")!)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
-
+        
         let task = session.dataTaskWithRequest(request) { data, response, error in
             
             // Handles network and other client-side errors
@@ -69,6 +69,28 @@ class ParseAPIClient: NSObject {
                 completionHandler(success: true, errorString: nil, studentArray: studentInformationArray)
             } else {
                 completionHandler(success: false, errorString: "Something went wrong", studentArray: nil)
+            }
+        }
+        task.resume()
+    }
+    
+    func postStudentLocations(studentInfo: StudentInformationStruct!, completionHandler: (success: Bool, errorString: String?) -> ()) {
+        let request = NSMutableURLRequest(URL: NSURL(string: STUDENT_API_BASE_URL_STRING)!)
+        request.HTTPMethod = "POST"
+        request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
+        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.HTTPBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"\(studentInfo.firstName)\", \"lastName\": \"\(studentInfo.lastName)\",\"mapString\": \"\(studentInfo.mapString)\", \"mediaURL\": \"\(studentInfo.mediaURL)\",\"latitude\": \(studentInfo.latitude), \"longitude\": \(studentInfo.longitude)}".dataUsingEncoding(NSUTF8StringEncoding)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            if error != nil { // Handle error…
+                dispatch_async(dispatch_get_main_queue()) {
+                    let alert = UIAlertView(title: "Oops", message: "An error has occured", delegate: self, cancelButtonTitle: "Dismiss")
+                    alert.show()
+                    return
+                }
+            } else {
+                completionHandler(success: true, errorString: nil)
             }
         }
         task.resume()
